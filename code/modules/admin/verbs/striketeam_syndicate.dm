@@ -122,9 +122,6 @@ GLOBAL_VAR_INIT(sent_syndicate_strike_team, 0)
 	return new_syndicate_commando
 
 /mob/living/carbon/human/proc/equip_syndicate_commando(is_leader = FALSE, full_gear = FALSE)
-	var/obj/item/radio/R = new /obj/item/radio/headset/syndicate/alt/syndteam(src)
-	R.set_frequency(SYNDTEAM_FREQ)
-	equip_to_slot_or_del(R, SLOT_HUD_LEFT_EAR)
 	equip_to_slot_or_del(new /obj/item/clothing/under/syndicate(src), SLOT_HUD_JUMPSUIT)
 	if(!full_gear)
 		equip_to_slot_or_del(new /obj/item/clothing/shoes/combat(src), SLOT_HUD_SHOES)

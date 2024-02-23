@@ -3826,19 +3826,6 @@
 /area/syndicate_mothership)
 "mU" = (
 /obj/structure/rack,
-/obj/item/radio/headset/heads/captain{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/radio/headset/syndicate,
-/obj/item/radio/headset/heads/ntrep{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/radio/headset/ert{
-	pixel_x = 6;
-	pixel_y = -6
-	},
 /turf/simulated/floor/plasteel,
 /area/admin)
 "mV" = (
@@ -3854,7 +3841,6 @@
 /area/abductor_ship)
 "mX" = (
 /obj/machinery/door/window{
-	dir = 2;
 	name = "Cockpit";
 	req_access_txt = "150"
 	},
@@ -4139,15 +4125,11 @@
 /turf/simulated/floor/plasteel/freezer,
 /area/syndicate_mothership)
 "nN" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/corner,
 /turf/simulated/floor/plating/airless,
 /area/syndicate_mothership)
 "nO" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plating/airless,
 /area/syndicate_mothership)
 "nP" = (
@@ -4908,8 +4890,7 @@
 "qJ" = (
 /obj/structure/table,
 /obj/machinery/door/window/classic/normal{
-	name = "security checkpoint";
-	dir = 2
+	name = "security checkpoint"
 	},
 /turf/simulated/floor/carpet,
 /area/admin)
@@ -7909,9 +7890,7 @@
 /turf/simulated/floor/wood,
 /area/ghost_bar)
 "Cl" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plating/airless,
 /area/centcom/control)
 "Cm" = (
@@ -8482,7 +8461,6 @@
 /area/holodeck/source_basketball)
 "Ej" = (
 /obj/machinery/door/window/reinforced/normal{
-	dir = 2;
 	name = "Cell Door";
 	req_access_txt = "150"
 	},
@@ -9043,10 +9021,6 @@
 /obj/item/storage/box/flashbangs,
 /obj/item/clothing/mask/gas,
 /obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/radio/headset/ert{
-	pixel_x = 6;
-	pixel_y = -6
-	},
 /obj/item/gun/energy/bsg/prebuilt/admin,
 /turf/simulated/floor/carpet/black,
 /area/centcom/specops)
@@ -11301,7 +11275,6 @@
 	name = "Hanger Bay Shutters";
 	pixel_y = -38
 	},
-/obj/item/radio/headset/centcom,
 /turf/simulated/floor/plasteel{
 	icon_state = "darkred"
 	},
@@ -11383,9 +11356,7 @@
 /obj/machinery/door/airlock/medical/glass{
 	name = "Escape Shuttle Infirmary"
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plasteel,
 /area/shuttle/escape)
 "Of" = (
@@ -12123,7 +12094,6 @@
 "QC" = (
 /obj/structure/table/wood,
 /obj/item/clipboard,
-/obj/item/radio/headset/centcom,
 /turf/simulated/floor/plasteel{
 	icon_state = "vault"
 	},
@@ -14333,8 +14303,7 @@
 "YJ" = (
 /obj/machinery/door/window/classic/normal{
 	name = "Cell B";
-	req_access_txt = "101";
-	dir = 2
+	req_access_txt = "101"
 	},
 /turf/simulated/floor/plasteel/dark,
 /area/admin)

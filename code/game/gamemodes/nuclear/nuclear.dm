@@ -257,14 +257,7 @@
 
 
 /datum/game_mode/proc/equip_syndicate(mob/living/carbon/human/synd_mob, uplink_uses = 100)
-	var/radio_freq = SYND_FREQ
-
-	var/obj/item/radio/R = new /obj/item/radio/headset/syndicate/alt(synd_mob)
-	R.set_frequency(radio_freq)
-	synd_mob.equip_to_slot_or_del(R, SLOT_HUD_LEFT_EAR)
-
 	var/back
-
 	switch(synd_mob.backbag)
 		if(GBACKPACK, DBACKPACK)
 			back = /obj/item/storage/backpack

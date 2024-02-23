@@ -335,7 +335,6 @@
 /datum/supply_packs/security/officerpack
 	name = "Officer Starter Pack"
 	contains = list(/obj/item/clothing/suit/armor/vest/security,
-				/obj/item/radio/headset/headset_sec/alt,
 				/obj/item/clothing/head/soft/sec,
 				/obj/item/reagent_containers/spray/pepper,
 				/obj/item/flash,

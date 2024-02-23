@@ -15,7 +15,6 @@
 	new /obj/item/storage/bag/garment/chief_engineer(src)
 	new /obj/item/mod/module/jetpack/advanced(src)
 	new /obj/item/cartridge/ce(src)
-	new /obj/item/radio/headset/heads/ce(src)
 	new /obj/item/storage/toolbox/mechanical(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/multitool(src)
@@ -85,7 +84,6 @@
 	new /obj/item/storage/backpack/duffel/engineering(src)
 	new /obj/item/storage/toolbox/mechanical(src)
 	new /obj/item/holosign_creator/engineering(src)
-	new /obj/item/radio/headset/headset_eng(src)
 	new /obj/item/clothing/under/rank/engineering/engineer(src)
 	new /obj/item/clothing/under/rank/engineering/engineer/skirt(src)
 	new /obj/item/clothing/suit/storage/hazardvest(src)
@@ -103,7 +101,6 @@
 	open_door_sprite = "eng_secure_door"
 
 /obj/structure/closet/secure_closet/atmos_personal/populate_contents()
-	new /obj/item/radio/headset/headset_eng(src)
 	new /obj/item/cartridge/atmos(src)
 	new /obj/item/storage/toolbox/mechanical(src)
 	if(prob(50))

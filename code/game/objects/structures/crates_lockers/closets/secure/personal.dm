@@ -11,7 +11,6 @@
 		new /obj/item/storage/backpack(src)
 	else
 		new /obj/item/storage/backpack/satchel_norm(src)
-	new /obj/item/radio/headset( src )
 
 
 /obj/structure/closet/secure_closet/personal/patient
@@ -33,7 +32,6 @@
 
 /obj/structure/closet/secure_closet/personal/cabinet/populate_contents()
 	new /obj/item/storage/backpack/satchel/withwallet( src )
-	new /obj/item/radio/headset( src )
 
 /obj/structure/closet/secure_closet/personal/attackby(obj/item/W, mob/user, params)
 	if(opened || !istype(W, /obj/item/card/id))

@@ -52,8 +52,6 @@
 	suit = /obj/item/clothing/suit/armor/hos
 	gloves = /obj/item/clothing/gloves/color/black/hos
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS
-	l_ear = /obj/item/radio/headset/heads/hos/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/hos
 	suit_store = /obj/item/gun/energy/gun
@@ -97,7 +95,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/warden
-	l_ear = /obj/item/radio/headset/headset_sec/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/warden
 	l_pocket = /obj/item/flash
@@ -144,7 +141,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/brown
 	head = /obj/item/clothing/head/det_hat
-	l_ear = /obj/item/radio/headset/headset_sec/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/detective
 	l_pocket = /obj/item/toy/crayon/white
@@ -200,7 +196,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet
-	l_ear = /obj/item/radio/headset/headset_sec/alt
 	id = /obj/item/card/id/security
 	l_pocket = /obj/item/flash
 	suit_store = /obj/item/gun/energy/disabler

@@ -53,7 +53,6 @@
 	new /obj/item/clothing/under/rank/medical/doctor(src)
 	new /obj/item/clothing/suit/storage/labcoat(src)
 	new /obj/item/clothing/shoes/white(src)
-	new /obj/item/radio/headset/headset_med(src)
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 	new /obj/item/defibrillator/loaded(src)
 	new /obj/item/handheld_defibrillator(src)
@@ -153,7 +152,6 @@
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)
 	new /obj/item/storage/bag/garment/chief_medical_officer(src)
-	new /obj/item/radio/headset/heads/cmo(src)
 	new /obj/item/defibrillator/compact/advanced/loaded(src)
 	new /obj/item/handheld_defibrillator(src)
 	new /obj/item/storage/belt/medical(src)
@@ -203,7 +201,6 @@
 	req_access = list(ACCESS_PARAMEDIC)
 
 /obj/structure/closet/secure_closet/paramedic/populate_contents()
-	new /obj/item/radio/headset/headset_med/para(src)
 	new /obj/item/mod/control/pre_equipped/rescue(src)
 	new /obj/item/key/ambulance(src)
 	new /obj/item/handheld_defibrillator(src)

@@ -439,7 +439,6 @@
 
 /datum/outfit/nanotrasenbridgeofficercorpse
 	name = "Bridge Officer Corpse"
-	l_ear = /obj/item/radio/headset/heads/hop
 	uniform = /obj/item/clothing/under/rank/centcom
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	shoes = /obj/item/clothing/shoes/black
@@ -470,7 +469,6 @@
 	uniform = /obj/item/clothing/under/costume/officeruniform
 	suit = /obj/item/clothing/suit/officercoat
 	shoes = /obj/item/clothing/shoes/clown_shoes
-	l_ear = /obj/item/radio/headset
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	back = /obj/item/storage/backpack/clown
@@ -490,7 +488,6 @@
 	uniform = /obj/item/clothing/under/costume/soldieruniform
 	suit = /obj/item/clothing/suit/soldiercoat
 	shoes = /obj/item/clothing/shoes/clown_shoes
-	l_ear = /obj/item/radio/headset
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	back = /obj/item/storage/backpack/clown
@@ -580,7 +577,6 @@
 	uniform = /obj/item/clothing/under/rank/cargo/miner
 	gloves = /obj/item/clothing/gloves/fingerless
 	shoes = /obj/item/clothing/shoes/workboots
-	l_ear = /obj/item/radio/headset/headset_cargo/mining
 	id = /obj/item/card/id/shaftminer
 	l_pocket = /obj/item/reagent_containers/patch/styptic
 	r_pocket = /obj/item/flashlight/seclite

@@ -28828,9 +28828,6 @@
 	pixel_x = -3;
 	pixel_y = 5
 	},
-/obj/item/radio/headset/headset_sci{
-	pixel_x = -3
-	},
 /obj/item/clothing/glasses/welding,
 /turf/simulated/floor/plasteel{
 	dir = 1;
@@ -53136,7 +53133,6 @@
 /obj/item/multitool{
 	pixel_x = 5
 	},
-/obj/item/radio/headset/headset_eng,
 /obj/item/cartridge/atmos,
 /obj/item/cartridge/atmos,
 /obj/item/t_scanner,

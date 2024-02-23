@@ -37,7 +37,6 @@
 	rt_mob_job = "ERT Commander"
 	uniform = /obj/item/clothing/under/rank/centcom/ert/commander
 	back = /obj/item/storage/backpack/ert/commander
-	l_ear = /obj/item/radio/headset/ert/alt/commander
 	id = /obj/item/card/id/ert/commander
 	l_pocket = /obj/item/pinpointer
 	r_pocket = /obj/item/melee/classic_baton/telescopic
@@ -415,7 +414,6 @@
 	uniform = /obj/item/clothing/under/rank/centcom/ert/chaplain
 	back = /obj/item/storage/backpack/ert/security
 	shoes = /obj/item/clothing/shoes/combat
-	l_ear = /obj/item/radio/headset/ert/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	belt = /obj/item/storage/belt/security/response_team
@@ -494,7 +492,6 @@
 	back = /obj/item/storage/backpack/ert/janitor
 	belt = /obj/item/storage/belt/janitor/full
 	shoes = /obj/item/clothing/shoes/galoshes/dry
-	l_ear = /obj/item/radio/headset/ert/alt
 	id = /obj/item/card/id/ert/janitorial
 	pda = /obj/item/pda/heads/ert/janitor
 	l_pocket = /obj/item/melee/classic_baton/telescopic

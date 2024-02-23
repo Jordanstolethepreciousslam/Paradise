@@ -30,7 +30,6 @@
 	gloves = /obj/item/clothing/gloves/color/black/ce
 	shoes = /obj/item/clothing/shoes/brown
 	head = /obj/item/clothing/head/hardhat/white
-	l_ear = /obj/item/radio/headset/heads/ce
 	id = /obj/item/card/id/ce
 	l_pocket = /obj/item/t_scanner
 	pda = /obj/item/pda/heads/ce
@@ -68,7 +67,6 @@
 	belt = /obj/item/storage/belt/utility/full
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat
-	l_ear = /obj/item/radio/headset/headset_eng
 	id = /obj/item/card/id/engineering
 	l_pocket = /obj/item/t_scanner
 	pda = /obj/item/pda/engineering
@@ -103,7 +101,6 @@
 	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician
 	belt = /obj/item/storage/belt/utility/atmostech
 	shoes = /obj/item/clothing/shoes/workboots
-	l_ear = /obj/item/radio/headset/headset_eng
 	id = /obj/item/card/id/atmostech
 	pda = /obj/item/pda/atmos
 

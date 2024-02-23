@@ -11,7 +11,6 @@
 		/obj/item/debug/human_spawner = 1
 	)
 	belt = /obj/item/storage/belt/military/abductor/full
-	l_ear = /obj/item/radio/headset/centcom/debug
 	glasses = /obj/item/clothing/glasses/hud/debug
 	mask = /obj/item/clothing/mask/gas/welding/advanced
 	shoes = /obj/item/clothing/shoes/combat/swat
@@ -39,6 +38,7 @@
 	var/obj/item/card/id/I = H.wear_id
 	if(istype(I))
 		apply_to_card(I, H, get_all_accesses(), "Debugger", "admin")
+
 
 	H.dna.SetSEState(GLOB.breathlessblock, 1)
 	singlemutcheck(H, GLOB.breathlessblock, MUTCHK_FORCED)

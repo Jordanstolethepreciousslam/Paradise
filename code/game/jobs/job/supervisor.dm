@@ -32,7 +32,6 @@
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	shoes = /obj/item/clothing/shoes/brown
 	head = /obj/item/clothing/head/caphat
-	l_ear = /obj/item/radio/headset/heads/captain/alt
 	glasses = /obj/item/clothing/glasses/hud/skills/sunglasses
 	id = /obj/item/card/id/captains_spare/assigned
 	pda = /obj/item/pda/captain
@@ -116,7 +115,6 @@
 	shoes = /obj/item/clothing/shoes/brown
 	head = /obj/item/clothing/head/hop
 	glasses = /obj/item/clothing/glasses/hud/skills/sunglasses
-	l_ear = /obj/item/radio/headset/heads/hop
 	id = /obj/item/card/id/hop
 	pda = /obj/item/pda/heads/hop
 	backpack_contents = list(
@@ -192,7 +190,6 @@
 	suit = /obj/item/clothing/suit/storage/ntrep
 	shoes = /obj/item/clothing/shoes/centcom
 	glasses = /obj/item/clothing/glasses/hud/skills/sunglasses
-	l_ear = /obj/item/radio/headset/heads/ntrep
 	id = /obj/item/card/id/ntrep
 	l_pocket = /obj/item/lighter/zippo/nt_rep
 	pda = /obj/item/pda/heads/ntrep
@@ -245,7 +242,6 @@
 	suit = /obj/item/clothing/suit/armor/vest/blueshield
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots
-	l_ear = /obj/item/radio/headset/heads/blueshield/alt
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	id = /obj/item/card/id/blueshield
 	pda = /obj/item/pda/heads/blueshield
@@ -295,7 +291,6 @@
 	suit = /obj/item/clothing/suit/magirobe
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/centcom
-	l_ear = /obj/item/radio/headset/heads/magistrate/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/magistrate
 	l_pocket = /obj/item/flash
@@ -344,7 +339,6 @@
 	uniform = /obj/item/clothing/under/rank/procedure/iaa
 	suit = /obj/item/clothing/suit/storage/iaa/blackjacket
 	shoes = /obj/item/clothing/shoes/brown
-	l_ear = /obj/item/radio/headset/headset_iaa/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/internalaffairsagent
 	l_pocket = /obj/item/laser_pointer

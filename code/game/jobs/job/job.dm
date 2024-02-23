@@ -157,7 +157,6 @@
 
 	uniform = /obj/item/clothing/under/color/grey
 	id = /obj/item/card/id
-	l_ear = /obj/item/radio/headset
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/black
 	pda = /obj/item/pda

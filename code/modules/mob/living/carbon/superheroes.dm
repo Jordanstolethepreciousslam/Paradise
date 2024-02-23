@@ -21,7 +21,6 @@
 	H.rename_character(H.real_name, name)
 	for(var/obj/item/W in H.get_all_slots())
 		H.unEquip(W)
-	H.equip_to_slot_or_del(new /obj/item/radio/headset(H), SLOT_HUD_LEFT_EAR)
 
 /datum/superheroes/proc/fixflags(mob/living/carbon/human/H)
 	for(var/obj/item/W in H.get_all_slots())
@@ -231,7 +230,6 @@
 	target.equip_to_slot_or_del(new /obj/item/clothing/under/color/grey/greytide(target), SLOT_HUD_JUMPSUIT)
 	target.equip_to_slot_or_del(new /obj/item/clothing/shoes/black/greytide(target), SLOT_HUD_SHOES)
 	target.equip_to_slot_or_del(new /obj/item/storage/toolbox/mechanical/greytide(target), SLOT_HUD_LEFT_HAND)
-	target.equip_to_slot_or_del(new /obj/item/radio/headset(target), SLOT_HUD_LEFT_EAR)
 	var/obj/item/card/id/syndicate/W = new(target)
 	W.icon_state = "lifetimeid"
 	W.access = list(ACCESS_MAINT_TUNNELS)

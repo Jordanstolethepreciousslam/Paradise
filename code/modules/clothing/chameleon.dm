@@ -584,29 +584,6 @@
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
 
-/obj/item/radio/headset/chameleon
-	name = "radio headset"
-	var/datum/action/item_action/chameleon/change/chameleon_action
-
-/obj/item/radio/headset/chameleon/Initialize(mapload)
-	. = ..()
-	chameleon_action = new(src)
-	chameleon_action.chameleon_type = /obj/item/radio/headset
-	chameleon_action.chameleon_name = "Headset"
-	chameleon_action.initialize_disguises()
-
-/obj/item/radio/headset/chameleon/Destroy()
-	QDEL_NULL(chameleon_action)
-	return ..()
-
-/obj/item/radio/headset/chameleon/emp_act(severity)
-	. = ..()
-	chameleon_action.emp_randomise()
-
-/obj/item/radio/headset/chameleon/broken/Initialize(mapload)
-	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
-
 /obj/item/pda/chameleon
 	name = "PDA"
 	var/datum/action/item_action/chameleon/change/chameleon_action

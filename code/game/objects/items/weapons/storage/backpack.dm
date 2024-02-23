@@ -113,7 +113,6 @@
 	new /obj/item/clothing/under/rank/civilian/clown(src)
 	new /obj/item/clothing/shoes/magboots/clown(src)
 	new /obj/item/clothing/mask/chameleon(src)
-	new /obj/item/radio/headset/headset_service(src)
 	new /obj/item/pda/clown(src)
 	new /obj/item/storage/box/survival(src)
 	new /obj/item/food/snacks/grown/banana(src)

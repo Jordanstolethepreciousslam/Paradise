@@ -26942,7 +26942,6 @@
 "cOP" = (
 /obj/structure/table,
 /obj/item/hand_labeler,
-/obj/item/radio/headset/headset_med,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -83756,7 +83755,6 @@
 /area/station/security/lobby)
 "ujU" = (
 /obj/item/hand_labeler,
-/obj/item/radio/headset/headset_med,
 /obj/structure/reagent_dispensers/virusfood{
 	pixel_x = 30
 	},

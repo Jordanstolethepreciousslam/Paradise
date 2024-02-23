@@ -13,7 +13,6 @@
 	new /obj/item/storage/backpack/duffel/captain(src)
 	new /obj/item/storage/bag/garment/captain(src)
 	new /obj/item/cartridge/captain(src)
-	new /obj/item/radio/headset/heads/captain/alt(src)
 	new /obj/item/storage/belt/rapier(src)
 	new /obj/item/gun/energy/gun(src)
 	new /obj/item/flash(src)
@@ -29,7 +28,6 @@
 
 /obj/structure/closet/secure_closet/hop/populate_contents()
 	new /obj/item/cartridge/hop(src)
-	new /obj/item/radio/headset/heads/hop(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/PDAs(src)
 	new /obj/item/gun/energy/gun/mini(src)
@@ -53,7 +51,6 @@
 
 	new /obj/item/storage/bag/garment/head_of_security(src)
 	new /obj/item/cartridge/hos(src)
-	new /obj/item/radio/headset/heads/hos/alt(src)
 	new /obj/item/storage/lockbox/mindshield(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/holosign_creator/security(src)
@@ -80,7 +77,6 @@
 	else
 		new /obj/item/storage/backpack/satchel_sec(src)
 	new /obj/item/storage/bag/garment/warden(src)
-	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/storage/box/zipties(src)
 	new /obj/item/storage/box/flashbangs(src)
@@ -102,7 +98,6 @@
 	else
 		new /obj/item/storage/backpack/satchel_sec(src)
 	new /obj/item/clothing/suit/armor/vest/security(src)
-	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/clothing/head/soft/sec(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/holosign_creator/security(src)
@@ -132,7 +127,6 @@
 	new /obj/item/storage/backpack/satchel_blueshield(src)
 	new /obj/item/storage/briefcase(src)
 	new /obj/item/storage/backpack/duffel/blueshield(src)
-	new /obj/item/radio/headset/heads/blueshield/alt(src)
 	new /obj/item/cartridge/hos(src)
 	new	/obj/item/storage/firstaid/adv(src)
 	new /obj/item/pinpointer/crew(src)
@@ -151,7 +145,6 @@
 /obj/structure/closet/secure_closet/ntrep/populate_contents()
 	new /obj/item/book/manual/wiki/faxes(src)
 	new /obj/item/storage/briefcase(src)
-	new /obj/item/radio/headset/heads/ntrep (src)
 	new /obj/item/cartridge/supervisor(src)
 	new /obj/item/paicard(src)
 	new /obj/item/flash(src)
@@ -198,7 +191,6 @@
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/storage/box/evidence(src)
 	new /obj/item/clipboard(src)
-	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/detective_scanner(src)
 	new /obj/item/ammo_box/magazine/detective/speedcharger(src)
 	new /obj/item/ammo_box/magazine/detective/speedcharger(src)
@@ -226,7 +218,6 @@
 	new /obj/item/clothing/under/color/orange/prison(src)
 	new /obj/item/clothing/shoes/orange(src)
 	new /obj/item/card/id/prisoner/random(src)
-	new /obj/item/radio/headset(src)
 
 /obj/structure/closet/secure_closet/brig/gulag
 	name = "labor camp locker"
@@ -272,7 +263,6 @@
 	new /obj/item/book/manual/wiki/faxes(src)
 	new /obj/item/storage/secure/briefcase(src)
 	new /obj/item/flash(src)
-	new /obj/item/radio/headset/heads/magistrate(src)
 	new /obj/item/cartridge/supervisor(src)
 	new /obj/item/gavelblock(src)
 	new /obj/item/gavelhammer(src)
@@ -294,5 +284,3 @@
 	new /obj/item/storage/secure/briefcase(src)
 	new /obj/item/storage/briefcase(src)
 	new /obj/item/storage/briefcase(src)
-	new /obj/item/radio/headset/headset_iaa(src)
-	new /obj/item/radio/headset/headset_iaa(src)
