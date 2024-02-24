@@ -240,7 +240,7 @@
 	for(var/obj/item/organ/internal/I in organs)
 		if(I)
 			I.surgeryize()
-		if(I && I.damage)
+		if(I && I.damage && I.damage < 100)
 			if(!I.is_robotic() && !istype(tool, /obj/item/stack/nanopaste))
 				user.visible_message(
 					"<span class='notice'> [user] treats damage to [target]'s [I.name] with [tool_name].</span>",
