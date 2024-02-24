@@ -107,7 +107,7 @@
 
 	var/lungs = get_int_organ_datum(ORGAN_DATUM_LUNGS)
 	if(!lungs)
-		adjustOxyLoss(2)
+		adjustOxyLoss(9)
 
 	//CRIT
 	if(!breath || (breath.total_moles() == 0) || !lungs)

@@ -73,7 +73,7 @@
 		name = "[dna.real_name]'s [initial(name)]"
 
 	if(!owner) return ..() // Probably a redundant removal; just bail
-	
+
 	if(is_species(owner, /datum/species/monkey))
 		name = "[owner.name]'s [initial(name)]"
 
@@ -151,13 +151,13 @@
 
 /obj/item/organ/internal/brain/proc/handle_moderate_brain_damage()
 	if(prob(4))
-		owner.Confused(20 SECONDS)
+		owner.Stuttering(15 SECONDS)
 		to_chat(owner, "<span class='warning'>It's suddenly difficult to walk straight.</span>")
 	else if(prob(5))
 		owner.EyeBlurry(15 SECONDS)
 		to_chat(owner, "<span class='warning'>Your vision unfocuses.</span>")
 	else if(prob(3))
-		owner.Drowsy(20 SECONDS)
+		owner.Slur(15 SECONDS)
 		to_chat(owner, "<span class='warning'>You're getting tired.</span>")
 
 /obj/item/organ/internal/brain/proc/handle_severe_brain_damage()
@@ -168,12 +168,6 @@
 		owner.Slur(60 SECONDS)
 		owner.Stuttering(60 SECONDS)
 		to_chat(owner, "<span class='warning'>You can't form your words properly.</span>")
-	else if(prob(2))
-		owner.Stun(5 SECONDS)
-		to_chat(owner, "<span class='warning'>You stare forward in a stupor.</span>")
-	else if(prob(5))
-		owner.KnockDown(1 SECONDS)
-		to_chat(owner, "<span class='warning'>You lose your footing, and stumble.</span>")
 
 /obj/item/organ/internal/brain/proc/handle_critical_brain_damage()
 	if(prob(4))

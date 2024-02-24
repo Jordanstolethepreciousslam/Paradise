@@ -21,6 +21,7 @@
 
 		handle_pain()
 		handle_heartbeat()
+		handle_combativity()
 		dna.species.handle_life(src)
 		if(!client)
 			dna.species.handle_npc(src)
@@ -565,13 +566,11 @@
 
 		if(health <= HEALTH_THRESHOLD_CRIT)
 			if(prob(5))
-				emote(pick("faint", "collapse", "cry", "moan", "gasp", "shudder", "shiver"))
+				emote(pick("cry", "moan", "gasp", "shudder", "shiver"))
 			SetStuttering(10 SECONDS)
 			EyeBlurry(5)
 			if(prob(7))
 				AdjustConfused(4 SECONDS)
-			if(prob(5))
-				Paralyse(4 SECONDS)
 			switch(health)
 				if(-INFINITY to -100)
 					adjustOxyLoss(1)
@@ -587,7 +586,6 @@
 					adjustOxyLoss(1)
 					if(prob(4))
 						to_chat(src, "<span class='userdanger'>Your chest hurts...</span>")
-						Paralyse(4 SECONDS)
 						var/datum/disease/D = new /datum/disease/critical/heart_failure
 						ForceContractDisease(D)
 				if(-79 to -50)
@@ -600,9 +598,6 @@
 						ForceContractDisease(D)
 					if(prob(6))
 						to_chat(src, "<span class='userdanger'>You feel [pick("horrible pain", "awful", "like shit", "absolutely awful", "like death", "like you are dying", "nothing", "warm", "sweaty", "tingly", "really, really bad", "horrible")]!</span>")
-						Weaken(6 SECONDS)
-					if(prob(3))
-						Paralyse(4 SECONDS)
 				if(-49 to 0)
 					adjustOxyLoss(1)
 					if(prob(3))
@@ -610,7 +605,6 @@
 						ForceContractDisease(D)
 					if(prob(5))
 						to_chat(src, "<span class='userdanger'>You feel [pick("terrible", "awful", "like shit", "sick", "numb", "cold", "sweaty", "tingly", "horrible")]!</span>")
-						Weaken(6 SECONDS)
 
 #define BODYPART_PAIN_REDUCTION 5
 
@@ -759,6 +753,9 @@
 	if(HAS_TRAIT(src, TRAIT_NODECAY))
 		return
 
+	if(getBrainLoss() < 110)
+		adjustBrainLoss(3) //ADD CHARSTR SCALING // 1 minute before it becomes too late for average character
+
 	if(reagents.has_reagent("formaldehyde")) //embalming fluid stops decay
 		return
 
@@ -876,3 +873,7 @@
 // Need this in species.
 //#undef HUMAN_MAX_OXYLOSS
 //#undef HUMAN_CRIT_MAX_OXYLOSS
+
+/mob/living/carbon/human/proc/handle_combativity()
+	if(getBruteLoss() + getFireLoss() >= 120 + shock_reduction()) // ADD CHARSTR SCALING
+		apply_status_effect(STATUS_EFFECT_HELPLESS)

@@ -21,7 +21,7 @@
 
 	if(dna.species && dna.species.has_organ["brain"])
 		var/obj/item/organ/internal/brain/sponge = get_int_organ(/obj/item/organ/internal/brain)
-		if(sponge)
+		if(sponge && (sponge.damage <= 100 || amount > 0))
 			if(dna.species && amount > 0)
 				if(use_brain_mod)
 					amount *= dna.species.brain_mod

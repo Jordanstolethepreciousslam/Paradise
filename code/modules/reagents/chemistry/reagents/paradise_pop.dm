@@ -45,7 +45,7 @@
 /datum/reagent/consumable/drink/berry_banned/on_mob_life(mob/living/M)
 	var/update_flags = STATUS_UPDATE_NONE
 	if(prob(10))
-		var/heal_type = rand(0, 5)		//still prefer the string version
+		var/heal_type = rand(0, 3)		//still prefer the string version
 		switch(heal_type)
 			if(0)
 				update_flags |= M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
@@ -55,10 +55,6 @@
 				update_flags |= M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 			if(3)
 				update_flags |= M.adjustOxyLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-			if(4)
-				update_flags |= M.adjustCloneLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-			if(5)
-				update_flags |= M.adjustBrainLoss(-1*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		to_chat(M, "<span class='notice'>You feel slightly rejuvinated!</span>")
 	return ..() | update_flags
 

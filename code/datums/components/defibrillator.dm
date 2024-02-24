@@ -129,6 +129,13 @@
 	if(!defib_ref) // Contingency
 		defib_ref = parent
 
+
+	if(target.getBrainLoss() >= 100)
+		playsound(get_turf(defib_ref), 'sound/machines/defib_saftyoff.ogg', 50, 0)
+		user.visible_message("<span class='boldnotice'>[defib_ref] chimes: No brain activity detected.</span>")
+		return
+
+
 	// Check what the unit itself has to say about how the defib went
 	var/application_result = SEND_SIGNAL(parent, COMSIG_DEFIB_PADDLES_APPLIED, user, target, should_cause_harm)
 
@@ -241,7 +248,6 @@
 	var/defib_success = TRUE
 
 	// Run through some quick failure states after shocking.
-	var/time_dead = world.time - target.timeofdeath
 
 	if(!target.is_revivable())
 		user.visible_message("<span class='boldnotice'>[defib_ref] buzzes: Resuscitation failed - Heart tissue damage beyond point of no return for defibrillation.</span>")
@@ -280,21 +286,11 @@
 		target.adjustBruteLoss(-heal_amount)
 
 		// Inflict some brain damage scaling with time spent dead
-		var/defib_time_brain_damage = min(100 * time_dead / BASE_DEFIB_TIME_LIMIT, 99) // 20 from 1 minute onward, +20 per minute up to 99
-		if(time_dead > DEFIB_TIME_LOSS && defib_time_brain_damage > target.getBrainLoss())
-			target.setBrainLoss(defib_time_brain_damage)
 
 		target.update_revive()
 		target.KnockOut()
 		target.Paralyse(10 SECONDS)
 		target.emote("gasp")
-
-		if(target.getBrainLoss() >= 100)
-			// If you want to treat this with mannitol, it'll have to metabolize while the patient is alive, so it's alright to bring them back up for a minute
-			playsound(get_turf(defib_ref), 'sound/machines/defib_saftyoff.ogg', 50, 0)
-			user.visible_message("<span class='boldnotice'>[defib_ref] chimes: Minimal brain activity detected, brain treatment recommended for full resuscitation.</span>")
-		else
-			playsound(get_turf(defib_ref), 'sound/machines/defib_success.ogg', 50, 0)
 
 		user.visible_message("<span class='boldnotice'>[defib_ref] pings: Resuscitation successful.</span>")
 

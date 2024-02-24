@@ -12,6 +12,7 @@
 	if(proximity && istype(G) && G.Touch(A, 1))
 		return
 
+
 	if(HAS_TRAIT(src, TRAIT_HULK))
 		if(proximity) //no telekinetic hulk attack
 			if(A.attack_hulk(src))
@@ -21,6 +22,9 @@
 		var/obj/structure/S = buckled
 		if(S.prevents_buckled_mobs_attacking())
 			return
+
+	if(has_status_effect(STATUS_EFFECT_HELPLESS))
+		return
 
 	if(SEND_SIGNAL(A, COMSIG_HUMAN_MELEE_UNARMED_ATTACKBY, src) & COMPONENT_CANCEL_ATTACK_CHAIN)
 		return

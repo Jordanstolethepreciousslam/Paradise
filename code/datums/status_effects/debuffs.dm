@@ -1299,3 +1299,12 @@
 			desc = "Real winners quit before they reach the ultimate prize."
 
 #undef DEFAULT_MAX_CURSE_COUNT
+
+
+/datum/status_effect/helpless
+	duration = 40
+	id = "helpless"
+	status_type = STATUS_EFFECT_REFRESH
+
+/datum/status_effect/helpless/tick()
+	owner.KnockDown(4 SECONDS)

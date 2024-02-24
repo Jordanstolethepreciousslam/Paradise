@@ -1935,6 +1935,8 @@ Eyes need to have significantly high darksight to shine unless the mob has the X
 	if(mind && mind.martial_art && mind.martial_art.no_guns) //great dishonor to famiry
 		to_chat(src, "<span class='warning'>[mind.martial_art.no_guns_message]</span>")
 		return FALSE
+	if(has_status_effect(STATUS_EFFECT_HELPLESS))
+		return FALSE
 
 /mob/living/carbon/human/proc/change_icobase(new_icobase, owner_sensitive)
 	for(var/obj/item/organ/external/O in bodyparts)

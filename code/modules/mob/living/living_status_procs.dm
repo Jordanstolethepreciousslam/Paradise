@@ -95,6 +95,8 @@ STATUS EFFECTS
 		return
 	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED))
 		return
+	if(has_status_effect(STATUS_EFFECT_HELPLESS))
+		return
 	set_body_position(STANDING_UP)
 
 /mob/living/proc/set_body_position(new_value)

@@ -52,7 +52,8 @@
 	description = "Synaptizine is used to treat neuroleptic shock. Can be used to help remove disabling symptoms such as confusion."
 	reagent_state = LIQUID
 	color = "#FA46FA"
-	overdose_threshold = 40
+	metabolization_rate = 0.15
+	overdose_threshold = 10
 	harmless = FALSE
 	taste_description = "stimulant"
 
@@ -62,7 +63,7 @@
 	M.AdjustConfused(-10 SECONDS)
 	M.AdjustDizzy(-10 SECONDS)
 	M.SetSleeping(0)
-	if(prob(50))
+	if(prob(2) && volume < 5)
 		update_flags |= M.adjustBrainLoss(-1, FALSE)
 	return ..() | update_flags
 
@@ -107,12 +108,6 @@
 			I.heal_internal_damage(0.4)
 	return ..()
 
-/datum/reagent/medicine/mitocholide/reaction_obj(obj/O, volume)
-	if(istype(O, /obj/item/organ))
-		var/obj/item/organ/Org = O
-		if(!Org.is_robotic())
-			Org.rejuvenate()
-
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
 	id = "cryoxadone"
@@ -133,7 +128,6 @@
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/M)
 	var/update_flags = STATUS_UPDATE_NONE
 	if(M.bodytemperature < TCRYO && data != "Ingested")
-		update_flags |= M.adjustCloneLoss(-4, FALSE)
 		update_flags |= M.adjustOxyLoss(-10, FALSE)
 		update_flags |= M.adjustToxLoss(-3, FALSE)
 		update_flags |= M.adjustBruteLoss(-12, FALSE)
@@ -161,7 +155,7 @@
 
 /datum/reagent/medicine/rezadone/on_mob_life(mob/living/M)
 	var/update_flags = STATUS_UPDATE_NONE
-	update_flags |= M.setCloneLoss(0, FALSE) // Rezadone is almost never used in favor of cryoxadone. Hopefully this will change that.
+	update_flags |= M.adjustCloneLoss(-1, FALSE) // Rezadone is almost never used in favor of cryoxadone. Hopefully this will change that.
 	update_flags |= M.adjustBruteLoss(-1, FALSE)
 	update_flags |= M.adjustFireLoss(-1, FALSE)
 
@@ -807,8 +801,6 @@
 	M.AdjustDrowsy(-10 SECONDS)
 	if(prob(5))
 		M.SetSleeping(0)
-	if(prob(5))
-		update_flags |= M.adjustBrainLoss(-1, FALSE)
 	holder.remove_reagent("histamine", 15)
 	M.AdjustLoseBreath(-2 SECONDS, bound_lower = 6 SECONDS)
 	if(M.getOxyLoss() > 35)
@@ -873,46 +865,6 @@
 			SM.revive()
 			SM.loot.Cut() //no abusing Lazarus Reagent for farming unlimited resources
 			SM.visible_message("<span class='warning'>[SM] seems to rise from the dead!</span>")
-
-	if(iscarbon(M))
-		if(method == REAGENT_INGEST || (method == REAGENT_TOUCH && prob(25)))
-			if(M.stat == DEAD)
-				if(M.getBruteLoss() + M.getFireLoss() + M.getCloneLoss() >= 150)
-					if(ischangeling(M))
-						return
-					M.delayed_gib(TRUE)
-					return
-				if(!M.ghost_can_reenter())
-					M.visible_message("<span class='warning'>[M] twitches slightly, but is otherwise unresponsive!</span>")
-					return
-
-				if(!M.suiciding && !HAS_TRAIT(M, TRAIT_HUSK) && !HAS_TRAIT(M, TRAIT_BADDNA))
-					var/time_dead = world.time - M.timeofdeath
-					M.visible_message("<span class='warning'>[M] seems to rise from the dead!</span>")
-					M.adjustCloneLoss(50)
-					M.setOxyLoss(0)
-					M.adjustBruteLoss(rand(0, 15))
-					M.adjustToxLoss(rand(0, 15))
-					M.adjustFireLoss(rand(0, 15))
-					if(ishuman(M))
-						var/mob/living/carbon/human/H = M
-						H.decaylevel = 0
-						var/necrosis_prob = 40 * min((20 MINUTES), max((time_dead - (1 MINUTES)), 0)) / ((20 MINUTES) - (1 MINUTES))
-						for(var/obj/item/organ/O in (H.bodyparts | H.internal_organs))
-							// Per non-vital body part:
-							// 0% chance of necrosis within 1 minute of death
-							// 40% chance of necrosis after 20 minutes of death
-							if(prob(necrosis_prob) && !O.is_robotic() && !O.vital)
-								// side effects may include: Organ failure
-								O.necrotize(FALSE)
-								if(O.status & ORGAN_DEAD)
-									O.germ_level = INFECTION_LEVEL_THREE
-						H.update_body()
-
-					M.grab_ghost()
-					M.update_revive()
-					add_attack_logs(M, M, "Revived with lazarus reagent") //Yes, the logs say you revived yourself.
-					SSblackbox.record_feedback("tally", "players_revived", 1, "lazarus_reagent")
 	..()
 
 /datum/reagent/medicine/sanguine_reagent
@@ -1004,7 +956,8 @@
 
 /datum/reagent/medicine/mannitol/on_mob_life(mob/living/M)
 	var/update_flags = STATUS_UPDATE_NONE
-	update_flags |= M.adjustBrainLoss(-3, FALSE)
+	if(M.getBrainLoss() < 60)
+		update_flags |= M.adjustBrainLoss(-1, FALSE)
 	return ..() | update_flags
 
 /datum/reagent/medicine/mutadone
@@ -1272,7 +1225,7 @@
 	update_flags |= M.adjustFireLoss(-5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	update_flags |= M.adjustOxyLoss(-15*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	update_flags |= M.adjustToxLoss(-5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-	update_flags |= M.adjustBrainLoss(-15*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	update_flags |= M.adjustBrainLoss(-5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	update_flags |= M.adjustCloneLoss(-3*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	return ..() | update_flags
 
@@ -1418,14 +1371,12 @@
 		update_flags |= M.adjustFireLoss(-1 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		update_flags |= M.adjustOxyLoss(-0.5 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		update_flags |= M.adjustToxLoss(-0.5 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
-		update_flags |= M.adjustCloneLoss(-0.1 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		update_flags |= M.adjustBrainLoss(1 * REAGENTS_EFFECT_MULTIPLIER, FALSE) //This does, after all, come from ambrosia, and the most powerful ambrosia in existence, at that!
 	else
 		update_flags |= M.adjustBruteLoss(-5 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		update_flags |= M.adjustFireLoss(-5 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		update_flags |= M.adjustOxyLoss(-3 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		update_flags |= M.adjustToxLoss(-3 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
-		update_flags |= M.adjustCloneLoss(-1 * REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		M.AdjustJitter(6 SECONDS, 0, 60 SECONDS)
 		update_flags |= M.adjustBrainLoss(2 * REAGENTS_EFFECT_MULTIPLIER, FALSE) //See above
 	M.AdjustDruggy(10 SECONDS, 0, 15 SECONDS)

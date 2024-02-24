@@ -700,7 +700,7 @@
 *///////////////////////
 
 /mob/living/can_resist()
-	return !((next_move > world.time) || incapacitated(ignore_restraints = TRUE))
+	return !((next_move > world.time) || incapacitated(ignore_restraints = TRUE) || has_status_effect(STATUS_EFFECT_HELPLESS))
 
 /mob/living/verb/resist()
 	set name = "Resist"

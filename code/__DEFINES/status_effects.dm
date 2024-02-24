@@ -112,6 +112,8 @@
 
 #define STATUS_EFFECT_MAGIC_DISGUISE /datum/status_effect/magic_disguise
 
+#define STATUS_EFFECT_HELPLESS /datum/status_effect/helpless
+
 
 //#define STATUS_EFFECT_NECROPOLIS_CURSE /datum/status_effect/necropolis_curse
 //#define CURSE_BLINDING	1 //makes the edges of the target's screen obscured
