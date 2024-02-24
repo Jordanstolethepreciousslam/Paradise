@@ -5,13 +5,6 @@
 	required_reagents = list("morphine" = 1, "sacid" = 1, "water" = 1, "oil" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/mitocholide
-	name = "mitocholide"
-	id = "mitocholide"
-	result = "mitocholide"
-	required_reagents = list("synthflesh" = 1, "cryoxadone" = 1, "plasma" = 1)
-	result_amount = 3
-
 /datum/chemical_reaction/cryoxadone
 	name = "Cryoxadone"
 	id = "cryoxadone"
