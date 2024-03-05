@@ -584,29 +584,6 @@
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
 
-/obj/item/radio/headset/chameleon
-	name = "radio headset"
-	var/datum/action/item_action/chameleon/change/chameleon_action
-
-/obj/item/radio/headset/chameleon/Initialize(mapload)
-	. = ..()
-	chameleon_action = new(src)
-	chameleon_action.chameleon_type = /obj/item/radio/headset
-	chameleon_action.chameleon_name = "Headset"
-	chameleon_action.initialize_disguises()
-
-/obj/item/radio/headset/chameleon/Destroy()
-	QDEL_NULL(chameleon_action)
-	return ..()
-
-/obj/item/radio/headset/chameleon/emp_act(severity)
-	. = ..()
-	chameleon_action.emp_randomise()
-
-/obj/item/radio/headset/chameleon/broken/Initialize(mapload)
-	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
-
 /obj/item/pda/chameleon
 	name = "PDA"
 	var/datum/action/item_action/chameleon/change/chameleon_action
@@ -648,3 +625,29 @@
 /obj/item/stamp/chameleon/broken/Initialize(mapload)
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
+
+/datum/action/item_action/chameleon/change/modsuit/update_item(obj/item/picked_item)
+	. = ..()
+	if(ismodcontrol(target))
+		var/obj/item/mod/control/C = target
+		if(C.current_disguise) //backup check
+			for(var/obj/item/mod/module/chameleon/toreturn in C.contents)
+				toreturn.return_look()
+			return
+		C.current_disguise = TRUE
+		C.item_state = initial(picked_item.item_state)
+		for(var/obj/item/mod/module/chameleon/tosignal in C.contents)
+			tosignal.RegisterSignal(C, COMSIG_MOD_ACTIVATE, TYPE_PROC_REF(/obj/item/mod/module/chameleon, return_look))
+
+/datum/action/item_action/chameleon/change/modsuit/select_look(mob/user)
+	if(ismodcontrol(target))
+		var/obj/item/mod/control/C = target
+		if(C.current_disguise) //backup check
+			for(var/obj/item/mod/module/chameleon/toreturn in C.contents)
+				toreturn.return_look()
+				return
+		if(C.active || C.activating)
+			to_chat(C.wearer, "<span class='warning'>Your suit is already active!</span>")
+			return
+	..()
+

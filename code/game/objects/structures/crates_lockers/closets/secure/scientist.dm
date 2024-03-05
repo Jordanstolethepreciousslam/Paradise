@@ -9,11 +9,8 @@
 	new /obj/item/storage/backpack/satchel_tox(src)
 	new /obj/item/clothing/under/rank/rnd/scientist(src)
 	new /obj/item/clothing/under/rank/rnd/scientist/skirt(src)
-	//new /obj/item/clothing/suit/labcoat/science(src)
 	new /obj/item/clothing/suit/storage/labcoat/science(src)
 	new /obj/item/clothing/shoes/white(src)
-//		new /obj/item/cartridge/signal/toxins(src)
-	new /obj/item/radio/headset/headset_sci(src)
 	new /obj/item/tank/internals/air(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/shoes/sandal/white(src)
@@ -34,9 +31,6 @@
 	new /obj/item/storage/backpack/duffel/robotics(src)
 	new /obj/item/clothing/suit/storage/labcoat/roboblack(src)
 	new /obj/item/clothing/suit/storage/labcoat/robowhite(src)
-	new /obj/item/radio/headset/headset_sci(src)
-	new /obj/item/radio/headset/headset_sci(src)
-	new /obj/item/radio/headset/headset_sci(src)
 
 
 /obj/structure/closet/secure_closet/RD
@@ -50,7 +44,6 @@
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)
 	new /obj/item/cartridge/rd(src)
-	new /obj/item/radio/headset/heads/rd(src)
 	new /obj/item/tank/internals/air(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/suit/armor/reactive/random(src)

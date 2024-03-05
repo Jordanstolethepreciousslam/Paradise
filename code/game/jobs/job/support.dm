@@ -39,7 +39,6 @@
 
 	uniform = /obj/item/clothing/under/rank/cargo/quartermaster
 	shoes = /obj/item/clothing/shoes/workboots/mining
-	l_ear = /obj/item/radio/headset/heads/qm
 	glasses = /obj/item/clothing/glasses/sunglasses
 	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
 	id = /obj/item/card/id/quartermaster
@@ -80,7 +79,6 @@
 	uniform = /obj/item/clothing/under/rank/cargo/tech
 	shoes = /obj/item/clothing/shoes/black
 	l_pocket = /obj/item/mail_scanner
-	l_ear = /obj/item/radio/headset/headset_cargo
 	id = /obj/item/card/id/supply
 	pda = /obj/item/pda/cargo
 
@@ -110,7 +108,6 @@
 	name = "Shaft Miner"
 	jobtype = /datum/job/mining
 
-	l_ear = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
@@ -183,7 +180,6 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	belt = /obj/item/storage/belt/bandolier/full
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/radio/headset/headset_service
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	id = /obj/item/card/id/bartender
 	pda = /obj/item/pda/bar
@@ -200,10 +196,8 @@
 	singlemutcheck(H, GLOB.soberblock, MUTCHK_FORCED)
 	H.dna.default_blocks.Add(GLOB.soberblock)
 	H.check_mutations = 1
-	var/datum/martial_art/judo/under_siege/bouncer_delight = new
-	bouncer_delight.teach(H)
 	ADD_TRAIT(H.mind, TRAIT_TABLE_LEAP, ROUNDSTART_TRAIT)
-
+	ADD_TRAIT(H.mind, TRAIT_SLEIGHT_OF_HAND, ROUNDSTART_TRAIT)
 
 /datum/job/chef
 	title = "Chef"
@@ -228,7 +222,6 @@
 	belt = /obj/item/storage/belt/chef
 	shoes = /obj/item/clothing/shoes/black
 	head = /obj/item/clothing/head/chefhat
-	l_ear = /obj/item/radio/headset/headset_service
 	id = /obj/item/card/id/chef
 	pda = /obj/item/pda/chef
 	backpack_contents = list(
@@ -267,7 +260,6 @@
 	suit = /obj/item/clothing/suit/apron
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/radio/headset/headset_service
 	suit_store = /obj/item/plant_analyzer
 	pda = /obj/item/pda/botanist
 	id = /obj/item/card/id/botanist
@@ -300,7 +292,6 @@
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
-	l_ear = /obj/item/radio/headset/headset_service
 	id = /obj/item/card/id/clown
 	pda = /obj/item/pda/clown
 	backpack_contents = list(
@@ -394,7 +385,6 @@
 	shoes = /obj/item/clothing/shoes/black
 	head = /obj/item/clothing/head/beret
 	mask = /obj/item/clothing/mask/gas/mime
-	l_ear = /obj/item/radio/headset/headset_service
 	id = /obj/item/card/id/mime
 	pda = /obj/item/pda/mime
 	backpack_contents = list(
@@ -445,7 +435,6 @@
 
 	uniform = /obj/item/clothing/under/rank/civilian/janitor
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/radio/headset/headset_service
 	id = /obj/item/card/id/janitor
 	pda = /obj/item/pda/janitor
 	r_pocket = /obj/item/door_remote/janikeyring
@@ -472,7 +461,6 @@
 
 	uniform = /obj/item/clothing/under/rank/civilian/librarian
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/radio/headset/headset_service
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/barcodescanner
 	l_hand = /obj/item/storage/bag/books

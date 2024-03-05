@@ -94,44 +94,6 @@
 	. = ..()
 	set_frequency(DTH_FREQ)
 
-/obj/item/radio/headset/syndicate
-	origin_tech = "syndicate=3"
-	ks1type = /obj/item/encryptionkey/syndicate/nukeops
-	requires_tcomms = FALSE
-	instant = TRUE // Work instantly if there are no comms
-	freqlock = TRUE
-
-/obj/item/radio/headset/syndicate/alt //undisguised bowman with flash protection
-	name = "syndicate headset"
-	desc = "A syndicate headset that can be used to hear all radio frequencies. Protects ears from flashbangs."
-	flags = EARBANGPROTECT
-	origin_tech = "syndicate=3"
-	icon_state = "syndie_headset"
-	item_state = "syndie_headset"
-
-/obj/item/radio/headset/syndicate/syndteam
-	ks1type = /obj/item/encryptionkey/syndteam
-
-/obj/item/radio/headset/syndicate/alt/syndteam
-	ks1type = /obj/item/encryptionkey/syndteam
-
-/obj/item/radio/headset/syndicate/alt/nocommon
-	name = "syndicate researcher headset"
-
-/obj/item/radio/headset/syndicate/alt/nocommon/New()
-	. = ..()
-	set_frequency(SYND_FREQ)
-
-/obj/item/radio/headset/soviet
-	name = "soviet bowman headset"
-	desc = "Used by U.S.S.P forces. Protects ears from flashbangs."
-	flags = EARBANGPROTECT
-	origin_tech = "syndicate=3"
-	icon_state = "soviet_headset"
-	item_state = "soviet_headset"
-	ks1type = /obj/item/encryptionkey/soviet
-	requires_tcomms = FALSE
-
 /obj/item/radio/headset/binary
 	origin_tech = "syndicate=3"
 	ks1type = /obj/item/encryptionkey/binary
@@ -367,7 +329,8 @@
 	requires_tcomms = FALSE
 	instant = TRUE
 
-/obj/item/radio/headset/heads/ai_integrated //No need to care about icons, it should be hidden inside the AI anyway.
+/// No need to care about icons, it should be hidden inside the AI anyway.
+/obj/item/radio/headset/heads/ai_integrated
 	name = "\improper AI subspace transceiver"
 	desc = "Integrated AI radio transceiver."
 	icon = 'icons/obj/robot_component.dmi'

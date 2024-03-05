@@ -1372,7 +1372,7 @@
 /obj/structure/lattice,
 /obj/machinery/light/small,
 /turf/space,
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "fr" = (
 /obj/docking_port/stationary/transit{
 	dir = 4;
@@ -3826,19 +3826,6 @@
 /area/syndicate_mothership)
 "mU" = (
 /obj/structure/rack,
-/obj/item/radio/headset/heads/captain{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/radio/headset/syndicate,
-/obj/item/radio/headset/heads/ntrep{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/radio/headset/ert{
-	pixel_x = 6;
-	pixel_y = -6
-	},
 /turf/simulated/floor/plasteel,
 /area/admin)
 "mV" = (
@@ -3854,7 +3841,6 @@
 /area/abductor_ship)
 "mX" = (
 /obj/machinery/door/window{
-	dir = 2;
 	name = "Cockpit";
 	req_access_txt = "150"
 	},
@@ -4139,15 +4125,11 @@
 /turf/simulated/floor/plasteel/freezer,
 /area/syndicate_mothership)
 "nN" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/corner,
 /turf/simulated/floor/plating/airless,
 /area/syndicate_mothership)
 "nO" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plating/airless,
 /area/syndicate_mothership)
 "nP" = (
@@ -4568,7 +4550,7 @@
 /area/shuttle/administration)
 "ps" = (
 /turf/simulated/mineral/ancient/outer,
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "pt" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Armory"
@@ -4908,8 +4890,7 @@
 "qJ" = (
 /obj/structure/table,
 /obj/machinery/door/window/classic/normal{
-	name = "security checkpoint";
-	dir = 2
+	name = "security checkpoint"
 	},
 /turf/simulated/floor/carpet,
 /area/admin)
@@ -5803,7 +5784,7 @@
 "tL" = (
 /obj/structure/lattice,
 /turf/space,
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "tM" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -7018,7 +6999,7 @@
 "ya" = (
 /obj/effect/mob_spawn/human/corpse/clown/corpse,
 /turf/simulated/floor/plating/asteroid/ancient/airless,
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "yc" = (
 /obj/structure/table/reinforced,
 /obj/item/lighter/zippo/contractor,
@@ -7029,7 +7010,7 @@
 /turf/simulated/floor/plating/airless{
 	icon_state = "asteroidplating"
 	},
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "yg" = (
 /mob/living/silicon/decoy{
 	name = "A.L.I.C.E."
@@ -7110,7 +7091,7 @@
 /turf/simulated/floor/plating/airless{
 	icon_state = "asteroidplating"
 	},
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "yL" = (
 /obj/machinery/computer/card,
 /turf/simulated/floor/plasteel,
@@ -7909,9 +7890,7 @@
 /turf/simulated/floor/wood,
 /area/ghost_bar)
 "Cl" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plating/airless,
 /area/centcom/control)
 "Cm" = (
@@ -8281,10 +8260,7 @@
 	},
 /area/centcom/suppy)
 "DD" = (
-/obj/machinery/power/apc{
-	name = "Gamma Armory APC";
-	pixel_y = -24
-	},
+/obj/machinery/power/apc/directional/south,
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
@@ -8485,7 +8461,6 @@
 /area/holodeck/source_basketball)
 "Ej" = (
 /obj/machinery/door/window/reinforced/normal{
-	dir = 2;
 	name = "Cell Door";
 	req_access_txt = "150"
 	},
@@ -9046,10 +9021,6 @@
 /obj/item/storage/box/flashbangs,
 /obj/item/clothing/mask/gas,
 /obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/radio/headset/ert{
-	pixel_x = 6;
-	pixel_y = -6
-	},
 /obj/item/gun/energy/bsg/prebuilt/admin,
 /turf/simulated/floor/carpet/black,
 /area/centcom/specops)
@@ -10854,7 +10825,7 @@
 "Mu" = (
 /obj/item/coin/antagtoken,
 /turf/simulated/floor/plating/asteroid/ancient/airless,
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "Mv" = (
 /obj/machinery/recharge_station/upgraded,
 /turf/simulated/floor/plasteel{
@@ -11304,7 +11275,6 @@
 	name = "Hanger Bay Shutters";
 	pixel_y = -38
 	},
-/obj/item/radio/headset/centcom,
 /turf/simulated/floor/plasteel{
 	icon_state = "darkred"
 	},
@@ -11386,9 +11356,7 @@
 /obj/machinery/door/airlock/medical/glass{
 	name = "Escape Shuttle Infirmary"
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plasteel,
 /area/shuttle/escape)
 "Of" = (
@@ -11601,7 +11569,7 @@
 /area/shuttle/escape)
 "OK" = (
 /turf/simulated/floor/plating/asteroid/ancient/airless,
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "OL" = (
 /obj/structure/curtain/open/shower,
 /obj/machinery/shower{
@@ -12126,7 +12094,6 @@
 "QC" = (
 /obj/structure/table/wood,
 /obj/item/clipboard,
-/obj/item/radio/headset/centcom,
 /turf/simulated/floor/plasteel{
 	icon_state = "vault"
 	},
@@ -13974,7 +13941,7 @@
 /turf/simulated/floor/plating/airless{
 	icon_state = "asteroidplating"
 	},
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "Xt" = (
 /obj/machinery/door/airlock/centcom{
 	name = "CentCom Customs"
@@ -14332,12 +14299,11 @@
 "YI" = (
 /obj/effect/decal/remains/human,
 /turf/simulated/floor/plating/asteroid/ancient/airless,
-/area/space/nearstation)
+/area/space/nearstation/centcom)
 "YJ" = (
 /obj/machinery/door/window/classic/normal{
 	name = "Cell B";
-	req_access_txt = "101";
-	dir = 2
+	req_access_txt = "101"
 	},
 /turf/simulated/floor/plasteel/dark,
 /area/admin)

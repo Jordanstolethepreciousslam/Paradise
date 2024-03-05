@@ -364,7 +364,6 @@ GLOBAL_LIST_EMPTY(ert_request_messages)
 	allow_loadout = FALSE
 	pda = /obj/item/pda/heads/ert
 	id = /obj/item/card/id/ert
-	l_ear = /obj/item/radio/headset/ert/alt
 	box = /obj/item/storage/box/responseteam
 	gloves = /obj/item/clothing/gloves/combat
 

@@ -53,7 +53,6 @@
 	uniform = /obj/item/clothing/under/rank/rnd/research_director
 	suit = /obj/item/clothing/suit/storage/labcoat/rd
 	shoes = /obj/item/clothing/shoes/brown
-	l_ear = /obj/item/radio/headset/heads/rd
 	id = /obj/item/card/id/rd
 	l_hand = /obj/item/clipboard
 	pda = /obj/item/pda/heads/rd
@@ -102,7 +101,6 @@
 	uniform = /obj/item/clothing/under/rank/rnd/scientist
 	suit = /obj/item/clothing/suit/storage/labcoat/science
 	shoes = /obj/item/clothing/shoes/white
-	l_ear = /obj/item/radio/headset/headset_sci
 	id = /obj/item/card/id/research
 	pda = /obj/item/pda/toxins
 
@@ -148,7 +146,6 @@
 	suit = /obj/item/clothing/suit/storage/labcoat/robowhite
 	belt = /obj/item/storage/belt/utility/full
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/radio/headset/headset_sci
 	id = /obj/item/card/id/roboticist
 	pda = /obj/item/pda/roboticist
 

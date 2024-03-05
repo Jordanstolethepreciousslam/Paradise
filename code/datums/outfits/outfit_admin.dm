@@ -43,7 +43,6 @@
 	belt = /obj/item/storage/belt/utility/full/multitool
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
-	l_ear = /obj/item/radio/headset/syndicate
 	id = /obj/item/card/id/syndicate
 	r_pocket = /obj/item/radio/uplink
 	backpack_contents = list(
@@ -90,7 +89,6 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi
 	belt = /obj/item/storage/belt/military
 	mask = /obj/item/clothing/mask/gas/syndicate
-	l_ear = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/night
 	shoes = /obj/item/clothing/shoes/magboots/syndie
 	r_pocket = /obj/item/radio/uplink/nuclear
@@ -149,7 +147,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/black
 	head = /obj/item/clothing/head/that
-	l_ear = /obj/item/radio/headset/ert
 	id = /obj/item/card/id/centcom
 	pda = /obj/item/pda
 	backpack_contents = list(
@@ -175,7 +172,6 @@
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/centcom
 	head = /obj/item/clothing/head/beret/centcom/captain
-	l_ear = /obj/item/radio/headset/centcom
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/centcom
 	pda = /obj/item/pda/centcom
@@ -205,7 +201,6 @@
 	back = /obj/item/storage/backpack/satchel
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/centcom
-	l_ear = /obj/item/radio/headset/centcom
 	id = /obj/item/card/id/centcom
 	r_pocket = /obj/item/lighter/zippo/nt_rep
 	l_pocket = /obj/item/storage/fancy/cigarettes/dromedaryco
@@ -238,7 +233,6 @@
 	belt = /obj/item/storage/belt/utility/full/multitool
 	gloves = /obj/item/clothing/gloves/color/yellow
 	shoes = /obj/item/clothing/shoes/chameleon/noslip
-	l_ear = /obj/item/radio/headset/centcom
 	id = /obj/item/card/id
 	pda = /obj/item/pda
 	backpack_contents = list(
@@ -286,7 +280,6 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	r_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
-	l_ear = /obj/item/radio/headset/alt/deathsquad
 	id = /obj/item/card/id/ert/deathsquad
 	suit_store = /obj/item/gun/energy/pulse
 
@@ -335,7 +328,6 @@
 	belt = /obj/item/storage/belt/utility/full/multitool
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/brown
-	l_ear = /obj/item/radio/headset
 	id = /obj/item/card/id
 	r_hand = /obj/item/melee/energy/sword/pirate
 	backpack_contents = list(
@@ -374,7 +366,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	mask = /obj/item/clothing/mask/gas/clown_hat
-	l_ear = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/thermal/monocle
 	id = /obj/item/card/id
 	l_pocket = /obj/item/food/snacks/grown/banana
@@ -410,7 +401,6 @@
 	shoes = /obj/item/clothing/shoes/black
 	head = /obj/item/clothing/head/beret
 	mask = /obj/item/clothing/mask/gas/mime
-	l_ear = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/thermal/monocle
 	id = /obj/item/card/id/syndicate
 	pda = /obj/item/pda/mime
@@ -456,7 +446,6 @@
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/brown
 	mask = /obj/item/clothing/mask/gas
-	l_ear = /obj/item/radio/headset
 	id = /obj/item/card/id
 	l_hand = /obj/item/storage/toolbox/mechanical
 	r_hand = /obj/item/flag/grey
@@ -532,7 +521,6 @@
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/singerb
 	gloves = /obj/item/clothing/gloves/color/white
-	l_ear = /obj/item/radio/headset
 	r_ear = /obj/item/clothing/ears/headphones
 	pda = /obj/item/pda
 	id = /obj/item/card/id
@@ -571,7 +559,6 @@
 	head = /obj/item/clothing/head/sovietsidecap
 	id = /obj/item/card/id/data
 	shoes = /obj/item/clothing/shoes/combat
-	l_ear = /obj/item/radio/headset/soviet
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1
 	)
@@ -694,7 +681,6 @@
 	glasses = /obj/item/clothing/glasses/hud/security/night
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/centcom
-	l_ear = /obj/item/radio/headset/ert
 	id = /obj/item/card/id/silver
 	r_pocket = /obj/item/lighter/zippo/blue
 	l_pocket = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
@@ -731,7 +717,6 @@
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
-	l_ear = /obj/item/radio/headset/ert/alt/solgov
 	id = /obj/item/card/id
 	l_hand = /obj/item/gun/projectile/automatic/shotgun/bulldog
 	suit_store = /obj/item/gun/projectile/automatic/pistol/m1911
@@ -781,7 +766,6 @@
 	glasses = /obj/item/clothing/glasses/night
 	back = /obj/item/storage/backpack/satchel
 	shoes = /obj/item/clothing/shoes/magboots/elite
-	l_ear = /obj/item/radio/headset/ert/alt/commander/solgov
 	l_hand = null
 	belt = /obj/item/melee/baton/loaded
 	suit_store = /obj/item/gun/projectile/automatic/pistol/deagle
@@ -826,7 +810,6 @@
 	l_hand = null
 	suit_store = /obj/item/gun/projectile/automatic/pistol/deagle
 	l_pocket = /obj/item/pinpointer/advpinpointer
-	l_ear = /obj/item/radio/headset/ert/alt/commander/solgov
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/reagent_containers/hypospray/autoinjector/survival = 1,
@@ -842,7 +825,6 @@
 	belt = /obj/item/melee/classic_baton
 	head = /obj/item/clothing/head/soft
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/sunglasses
 	id = /obj/item/card/id/supply
 	pda = /obj/item/pda
@@ -894,7 +876,6 @@
 	shoes = /obj/item/clothing/shoes/magboots
 	head = /obj/item/clothing/head/helmet/space
 	mask = /obj/item/clothing/mask/breath
-	l_ear = /obj/item/radio/headset
 	id = /obj/item/card/id
 
 /datum/outfit/admin/spacegear/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -950,7 +931,8 @@
 	back = /obj/item/mod/control/pre_equipped/traitor
 	shoes = /obj/item/clothing/shoes/magboots/syndie
 
-/datum/outfit/admin/modsuit/wizard // Technically not a MODsuit, we'll bundle it up in here for the future when it does become one
+/// Technically not a MODsuit, we'll bundle it up in here for the future when it does become one
+/datum/outfit/admin/modsuit/wizard
 	name = "Hardsuit - Wizard"
 	suit = /obj/item/clothing/suit/space/hardsuit/wizard
 	shoes = /obj/item/clothing/shoes/magboots/wizard
@@ -980,7 +962,8 @@
 	name = "Tournament Standard Green"
 	uniform = /obj/item/clothing/under/color/green
 
-/datum/outfit/admin/tournament/tournament_gangster //gangster are supposed to fight each other. --rastaf0
+/// gangster are supposed to fight each other. --rastaf0
+/datum/outfit/admin/tournament/tournament_gangster
 	name = "Tournament Gangster"
 
 	uniform = /obj/item/clothing/under/rank/security/detective
@@ -991,7 +974,8 @@
 	l_pocket = /obj/item/ammo_box/a357
 	r_hand = /obj/item/gun/projectile/automatic/proto
 
-/datum/outfit/admin/tournament/tournament_chef //Steven Seagal FTW
+/// Steven Seagal FTW
+/datum/outfit/admin/tournament/tournament_chef
 	name = "Tournament Chef"
 
 	uniform = /obj/item/clothing/under/rank/civilian/chef
@@ -1031,7 +1015,6 @@
 	back = /obj/item/storage/backpack
 	gloves = /obj/item/clothing/gloves/color/latex
 	shoes = /obj/item/clothing/shoes/white
-	l_ear = /obj/item/radio/headset
 	id = /obj/item/card/id
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1
@@ -1061,7 +1044,6 @@
 	shoes = /obj/item/clothing/shoes/white
 	head = /obj/item/clothing/head/welding
 	mask = /obj/item/clothing/mask/surgical
-	l_ear = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/thermal/monocle
 	id = /obj/item/card/id/syndicate
 	l_pocket = /obj/item/kitchen/knife
@@ -1097,7 +1079,6 @@
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/magboots
 	mask = /obj/item/clothing/mask/breath
-	l_ear = /obj/item/radio/headset/ert
 	glasses = /obj/item/clothing/glasses/meson/cyber
 	id = /obj/item/card/id
 	suit_store = /obj/item/tank/internals/oxygen
@@ -1123,7 +1104,6 @@
 	back = /obj/item/storage/backpack
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/chameleon/noslip
-	l_ear = /obj/item/radio/headset/syndicate
 	id = /obj/item/card/id/syndicate
 	l_hand = /obj/item/dualsaber/red
 	backpack_contents = list(
@@ -1154,7 +1134,6 @@
 	back = /obj/item/storage/backpack
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/chameleon/noslip
-	l_ear = /obj/item/radio/headset/syndicate
 	id = /obj/item/card/id
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
@@ -1196,7 +1175,6 @@
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/sandal
 	head = /obj/item/clothing/head/wizard
-	l_ear = /obj/item/radio/headset
 	id = /obj/item/card/id
 	r_pocket = /obj/item/teleportation_scroll
 	l_hand = /obj/item/staff
@@ -1266,7 +1244,6 @@
 	head = /obj/item/clothing/head/hooded/chaplain_hood
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/radio/headset/syndicate
 	id = /obj/item/card/id/syndicate
 	r_hand = /obj/item/nullrod/armblade
 	backpack_contents = list(
@@ -1313,7 +1290,6 @@
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	suit = /obj/item/clothing/suit/storage/det_suit
 	pda = /obj/item/pda/clown
-	l_ear = /obj/item/radio/headset
 	r_pocket = /obj/item/reagent_containers/patch/jestosterone
 
 /datum/outfit/admin/honksquad/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1401,7 +1377,6 @@
 	suit = /obj/item/clothing/suit/hooded/oblivion
 	gloves = /obj/item/clothing/gloves/color/white/supermatter_immune
 	mask = /obj/item/clothing/mask/gas/voice_modulator/oblivion
-	l_ear = /obj/item/radio/headset
 	suit_store = /obj/item/supermatter_halberd
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	box = /obj/item/storage/box/wizard
