@@ -60,6 +60,9 @@
 /datum/atom_hud/data/janitor
 	hud_icons = list(JANI_HUD)
 
+/datum/atom_hud/data/human/tachud
+	hud_icons = list(TAC_HUD)
+
 /* MED/SEC/DIAG HUD HOOKS */
 
 /*
@@ -538,3 +541,43 @@
 	if(!R.fields["comments"])
 		R.fields["comments"] = list()
 	R.fields["comments"] += list(comment_text)
+
+
+/mob/living/carbon/human/proc/update_hud_tac()
+	var/image/holder = hud_list[TAC_HUD]
+	var/state = "tacno"
+	if(CharSheet.TacBarMax == 0)
+		if(CharSheet.TacBar > 0)
+			state = "tac100"
+		if(CharSheet.TacBar < 0)
+			state = "tac0"
+		return
+	var/div = CharSheet.TacBar / CharSheet.TacBarMax
+
+	switch(ceil(div * 100))
+		if(99 to INFINITY)
+			state = "tacno"
+		if(91 to 99)
+			state = "tac100"
+		if(81 to 90)
+			state = "tac90"
+		if(71 to 80)
+			state = "tac80"
+		if(61 to 70)
+			state = "tac70"
+		if(51 to 60)
+			state = "tac60"
+		if(41 to 50)
+			state = "tac50"
+		if(31 to 40)
+			state = "tac40"
+		if(21 to 30)
+			state = "tac30"
+		if(11 to 20)
+			state = "tac20"
+		if(1 to 10)
+			state = "tac10"
+		else
+			state = "tac0"
+
+	holder.icon_state = state

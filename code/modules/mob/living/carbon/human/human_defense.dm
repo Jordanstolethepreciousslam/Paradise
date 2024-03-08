@@ -483,6 +483,13 @@ emp_act
 		if(check_shields(I, I.force, "the [I.name]", MELEE_ATTACK, I.armour_penetration_flat, I.armour_penetration_percentage))
 			return FALSE
 
+	if(ishuman(user))
+		var/mob/living/carbon/human/A = user
+		var/datum/charsheet/attacker = A.CharSheet
+		if(!CharSheet.failedDodgeMelee(attacker, I))
+			return FALSE
+
+
 	if(check_block())
 		visible_message("<span class='warning'>[src] blocks [I]!</span>")
 		return FALSE
@@ -528,7 +535,7 @@ emp_act
 						if(prob(I.force))
 							visible_message("<span class='combat danger'>[src] has been knocked down!</span>", \
 											"<span class='combat userdanger'>[src] has been knocked down!</span>")
-							KnockDown(10 SECONDS)
+							// add debuff
 							AdjustConfused(30 SECONDS)
 						if(mind && prob(I.force + ((100 - health) / 2)) && src != user && I.damtype == BRUTE)
 							SSticker.mode.remove_revolutionary(mind, activate_protection = TRUE)
@@ -549,7 +556,7 @@ emp_act
 					if(stat == CONSCIOUS && I.force && prob(I.force + 10))
 						visible_message("<span class='combat danger'>[src] has been knocked down!</span>", \
 										"<span class='combat userdanger'>[src] has been knocked down!</span>")
-						KnockDown(8 SECONDS)
+						// add debuff
 
 					if(bloody)
 						if(wear_suit)
@@ -571,6 +578,8 @@ emp_act
 	if(isitem(AM))
 		I = AM
 		throwpower = I.throwforce
+		if(!CharSheet.failedGenericDodge(throwpower, I.throw_speed * 0.2 + 1.0))
+			return
 		if(locateUID(I.thrownby) == src) //No throwing stuff at yourself to trigger reactions
 			return ..()
 	if(check_shields(AM, throwpower, "\the [AM.name]", THROWN_PROJECTILE_ATTACK))
@@ -791,5 +800,32 @@ emp_act
 	return TRUE
 
 /mob/living/carbon/human/projectile_hit_check(obj/item/projectile/P)
-	return HAS_TRAIT(src, TRAIT_FLOORED) && !density // hit mobs that are intentionally lying down to prevent combat crawling.
+	if(HAS_TRAIT(src, TRAIT_FLOORED) && !density) // hit mobs that are intentionally lying down to prevent combat crawling.
+		return TRUE
+	if(src in P.permutated)
+		return TRUE
+	if(ishuman(P.firer))
+		var/mob/living/carbon/human/attacker = P.firer
+		if(CharSheet.failedDodge(attacker.CharSheet, P))
+			return FALSE
+		else
+			P.permutated.Add(src)
+			return TRUE
 
+/mob/living/carbon/human/resist_grab()
+	var/resisting = 0
+	if(HAS_TRAIT(src, TRAIT_IMMOBILIZED))
+		return FALSE //You can't move, so you can't resist
+	for(var/X in grabbed_by)
+		var/obj/item/grab/G = X
+		resisting++
+		if(G.hits)
+			G.hits--
+			visible_message("<span class='danger'>[src] resists 1 grab hitpoint, [G.hits] remains!</span>")
+		if(!G.hits)
+			qdel(G)
+			visible_message("<span class='danger'>[src] has broken free of [G.assailant]'s grip!</span>")
+
+	if(resisting)
+		visible_message("<span class='danger'>[src] resists!</span>")
+		return 1

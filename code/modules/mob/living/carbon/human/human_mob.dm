@@ -7,6 +7,7 @@
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE|LONG_GLIDE
 	deathgasp_on_death = TRUE
 	throw_range = 4
+	var/datum/charsheet/CharSheet = new /datum/charsheet()
 
 /mob/living/carbon/human/Initialize(mapload, datum/species/new_species = /datum/species/human)
 	icon = null // This is now handled by overlays -- we just keep an icon for the sake of the map editor.
@@ -21,6 +22,7 @@
 	GLOB.human_list += src
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, -6)
 	RegisterSignal(src, COMSIG_BODY_TRANSFER_TO, PROC_REF(mind_checks))
+	CharSheet.TransferTo(src)
 
 /**
   * Handles any adjustments to the mob after a mind transfer.
@@ -72,6 +74,9 @@
 	sec_hud_set_security_status()
 	//...and display them.
 	add_to_all_human_data_huds()
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_TAC]
+	H.add_hud_to(src)
+	permanent_huds |= H
 
 /mob/living/carbon/human/Destroy()
 	. = ..()

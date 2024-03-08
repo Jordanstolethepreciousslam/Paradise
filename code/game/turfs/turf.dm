@@ -580,4 +580,5 @@
 		C.Weaken(3 SECONDS)
 	else
 		C.take_organ_damage(damage)
-		C.KnockDown(3 SECONDS)
+		C.KnockDown(1 SECONDS)
+		C.Slowed(2 SECONDS)

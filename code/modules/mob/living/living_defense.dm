@@ -386,6 +386,6 @@
 		return FALSE
 	add_attack_logs(attacker, target, "pushed into [src]", ATKLOG_ALL)
 	playsound(src, 'sound/weapons/punch1.ogg', 50, 1)
-	target.KnockDown(1 SECONDS) // knock them both down
-	KnockDown(1 SECONDS)
+	target.Slowed(2 SECONDS) // knock them both down
+	Slowed(2 SECONDS)
 	return TRUE

@@ -29,7 +29,7 @@
 	var/paused = FALSE //for suspending the projectile midair
 	var/p_x = 16
 	var/p_y = 16 // the pixel location of the tile that the player clicked. Default is the center
-	var/speed = 1			//Amount of deciseconds it takes for projectile to travel
+	var/speed = 0.4			//Amount of deciseconds it takes for projectile to travel
 	var/Angle = null
 	var/original_angle = null //Angle at firing
 	var/spread = 0			//amount (in degrees) of projectile spread
@@ -38,6 +38,7 @@
 	var/ignore_source_check = FALSE
 
 	var/damage = 10
+	var/precision = 10
 	var/tile_dropoff = 0	//how much damage should be decremented as the bullet moves
 	var/tile_dropoff_s = 0	//same as above but for stamina
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE are the only things that should be in here
@@ -244,6 +245,14 @@
 /obj/item/projectile/Bump(atom/A, yes)
 	if(!yes) //prevents double bumps.
 		return
+
+	if(ishuman(A) && ishuman(firer))
+		var/mob/living/carbon/human/victim = A
+		var/mob/living/carbon/human/attacker = firer
+		if(!victim.CharSheet.failedDodge(attacker.CharSheet, src))
+			if(victim)
+				permutated.Add(victim)
+			return
 
 	if(check_ricochet(A) && check_ricochet_flag(A) && ricochets < ricochets_max && is_reflectable(REFLECTABILITY_PHYSICAL))
 		if(hitscan && ricochets_max > 10)

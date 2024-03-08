@@ -208,6 +208,11 @@
 			return TRUE
 		if(HAS_TRAIT(mob, TRAIT_IMMOBILIZED))
 			return TRUE //You can't move, so you can't break it by trying to move.
+		if(ishuman(mob))
+			var/mob/living/carbon/human/V = mob
+			if(!V.run_resist())
+				move_delay = world.time + 10
+				return TRUE
 		var/list/grabbing = list()
 
 		if(istype(mob.l_hand, /obj/item/grab))

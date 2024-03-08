@@ -1,7 +1,7 @@
 /mob/living/carbon/human
 
 	hud_possible = list(
-		HEALTH_HUD, STATUS_HUD, SPECIALROLE_HUD, // from /mob/living
+		HEALTH_HUD, STATUS_HUD, TAC_HUD, SPECIALROLE_HUD, // from /mob/living
 		ID_HUD, WANTED_HUD, IMPMINDSHIELD_HUD, IMPCHEM_HUD, IMPTRACK_HUD, GLAND_HUD,
 		DIAG_STAT_HUD, DIAG_HUD // for IPCs
 	)

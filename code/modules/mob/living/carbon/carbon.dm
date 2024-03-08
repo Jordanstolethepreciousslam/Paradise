@@ -617,13 +617,12 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, list(/obj/machinery/atmospherics/unary/ven
 		if(HAS_TRAIT(D, TRAIT_WIELDED) && D.force)
 			visible_message("<span class='danger'>[src] impales [C] with [D], before dropping them on the ground!</span>")
 			C.apply_damage(100, BRUTE, "chest", sharp = TRUE, used_weapon = "Impaled on [D].")
-			C.Stun(2 SECONDS) //Punishment. This could also be used by a traitor to throw someone into a dsword to kill them, but hey, teamwork!
-			C.KnockDown(6 SECONDS)
+			C.Slowed(2 SECONDS)
 			D.melee_attack_chain(src, C) //attack animation / jedi spin
 			C.emote("scream")
 			return
 	. = ..()
-	KnockDown(3 SECONDS)
+	Slowed(2 SECONDS)
 
 /mob/living/carbon/proc/toggle_throw_mode()
 	if(in_throw_mode)

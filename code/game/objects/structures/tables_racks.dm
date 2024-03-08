@@ -218,7 +218,7 @@
 			to_chat(user, "<span class='warning'>You cannot do this there is \a [blocking_object] in the way!</span>")
 			return FALSE
 		G.affecting.forceMove(get_turf(src))
-		G.affecting.Weaken(4 SECONDS)
+		G.affecting.Weaken(1 SECONDS)
 		item_placed(G.affecting)
 		G.affecting.visible_message("<span class='danger'>[G.assailant] pushes [G.affecting] onto [src].</span>", \
 									"<span class='userdanger'>[G.assailant] pushes [G.affecting] onto [src].</span>")
@@ -269,7 +269,7 @@
 	target.pass_flags |= PASSTABLE
 	if(target.Move(loc))
 		. = TRUE
-		target.Weaken(4 SECONDS)
+		target.Slowed(4 SECONDS)
 		add_attack_logs(attacker, target, "pushed onto [src]", ATKLOG_ALL)
 	else
 		. = FALSE
@@ -476,7 +476,7 @@
 		debris -= AM
 		if(istype(AM, /obj/item/shard))
 			AM.throw_impact(L)
-	L.Weaken(10 SECONDS)
+	L.Weaken(2 SECONDS)
 	qdel(src)
 
 /obj/structure/table/glass/shove_impact(mob/living/target, mob/living/attacker)
@@ -562,7 +562,7 @@
 	target.pass_flags |= PASSTABLE
 	if(target.Move(loc))
 		. = TRUE
-		target.Weaken(4 SECONDS)
+		target.Slowed(2 SECONDS)
 		add_attack_logs(attacker, target, "pushed onto [src]", ATKLOG_ALL)
 	else
 		. = FALSE

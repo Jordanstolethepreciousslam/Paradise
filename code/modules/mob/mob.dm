@@ -69,6 +69,7 @@
 		IMPMINDSHIELD_HUD = 'icons/mob/hud/sechud.dmi',
 		IMPCHEM_HUD = 'icons/mob/hud/sechud.dmi',
 		IMPTRACK_HUD = 'icons/mob/hud/sechud.dmi',
+		TAC_HUD = 'icons/mob/hud/tachud.dmi',
 	)
 
 	for(var/hud in hud_possible)

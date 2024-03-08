@@ -21,6 +21,7 @@
 
 		handle_pain()
 		handle_heartbeat()
+		CharSheet.update()
 		dna.species.handle_life(src)
 		if(!client)
 			dna.species.handle_npc(src)

@@ -571,7 +571,7 @@
 		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
 			target.visible_message("<span class='danger'>[user] has knocked down [target]!</span>", \
 							"<span class='userdanger'>[user] has knocked down [target]!</span>")
-			target.KnockDown(4 SECONDS)
+
 		SEND_SIGNAL(target, COMSIG_PARENT_ATTACKBY)
 
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
@@ -640,11 +640,8 @@
 		target.visible_message("<span class='warning'>[user] slams [target] into an obstacle!</span>", \
 								"<span class='userdanger'>You get slammed into the obstacle by [user]!</span>", \
 								"You hear a loud thud.")
-		if(!HAS_TRAIT(target, TRAIT_FLOORED))
-			target.KnockDown(3 SECONDS)
-			addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, SetKnockDown), 0), 3 SECONDS) // so you cannot chain stun someone
-		else if(!user.IsStunned())
-			target.Stun(0.5 SECONDS)
+		if(target.IsSlowed())
+			target.Slowed(2 SECONDS)
 	else
 		var/obj/item/active_hand = target.get_active_hand()
 		if(target.IsSlowed() && active_hand && !IS_HORIZONTAL(user) && !HAS_TRAIT(active_hand, TRAIT_WIELDED) && !istype(active_hand, /obj/item/grab))

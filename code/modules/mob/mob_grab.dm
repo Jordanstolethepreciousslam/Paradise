@@ -21,6 +21,8 @@
 	var/last_hit_zone = 0
 //	var/force_down //determines if the affecting mob will be pinned to the ground //disabled due to balance, kept for an example for any new things.
 	var/dancing //determines if assailant and affecting keep looking at each other. Basically a wrestling position
+	var/attAdv = 0
+	var/hits = 2
 
 	layer = 21
 	plane = HUD_PLANE
@@ -28,6 +30,10 @@
 	icon = 'icons/mob/screen_gen.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 
+/obj/item/grab/proc/getadvantage(mob/living/carbon/human/A, mob/living/carbon/human/V)
+	attAdv = A.CharSheet.CharSTR - V.CharSheet.CharSTR
+	hits = 1 + floor(attAdv * 0.75)
+	return attAdv
 
 /obj/item/grab/New(mob/user, mob/victim)
 	..()
@@ -35,6 +41,17 @@
 	//Okay, first off, some fucking sanity checking. No user, or no victim, or they are not mobs, no grab.
 	if(!istype(user) || !istype(victim))
 		return
+
+	var/mob/living/carbon/human/V
+	var/mob/living/carbon/human/A
+	if(ishuman(victim) && ishuman(user))
+		V = victim
+		A = user
+	if(A.IsSlowed())
+		A.visible_message("[A.name] tries to catch [V.name] but struggles to keep up with them")
+		playsound(A.loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+		return
+
 
 	loc = user
 	assailant = user
@@ -63,8 +80,21 @@
 
 	clean_grabbed_by(assailant, affecting)
 	adjust_position()
+	if(ishuman(user) && V)
+		attAdv = getadvantage(user, victim)
+		attAdv *= 0.5
+		V.CharSheet.adjustDEX(floor(-attAdv))
+
+
+	last_upgrade = world.time
+
 
 /obj/item/grab/Destroy()
+	var/mob/living/carbon/human/A
+	var/mob/living/carbon/human/V
+	if(ishuman(assailant) && ishuman(affecting))
+		V = affecting
+		A = assailant
 	if(affecting)
 		UnregisterSignal(affecting, COMSIG_MOVABLE_MOVED)
 		if(!affecting.buckled)
@@ -73,11 +103,13 @@
 			affecting.layer = initial(affecting.layer)
 		affecting.grabbed_by -= src
 		affecting = null
+		V.CharSheet.adjustDEX(floor(attAdv))
 	if(assailant)
 		UnregisterSignal(assailant, COMSIG_MOVABLE_MOVED)
 		if(assailant.client)
 			assailant.client.screen -= hud
 		assailant = null
+		A.Slowed(2 SECONDS)
 	QDEL_NULL(hud)
 	return ..()
 
@@ -233,7 +265,6 @@
 	var/breathing_tube = affecting.get_organ_slot("breathing_tube")
 
 	if(state >= GRAB_NECK)
-		affecting.Stun(3 SECONDS)
 		if(isliving(affecting) && !breathing_tube) //It will hamper your breathing, being choked and all.
 			var/mob/living/L = affecting
 			L.adjustOxyLoss(1)
@@ -241,8 +272,6 @@
 	if(state >= GRAB_KILL)
 		affecting.Stuttering(10 SECONDS) //It will hamper your voice, being choked and all.
 		affecting.Weaken(10 SECONDS)	//Should keep you down unless you get help.
-		if(!breathing_tube)
-			affecting.AdjustLoseBreath(4 SECONDS, bound_lower = 0, bound_upper = 6 SECONDS)
 
 	adjust_position()
 
@@ -309,6 +338,10 @@
 
 	last_upgrade = world.time
 
+	var/mob/living/carbon/human/V
+	if(ishuman(affecting))
+		V = affecting
+
 	if(state < GRAB_AGGRESSIVE)
 		if(!allow_upgrade)
 			return
@@ -323,6 +356,11 @@
 			affecting.setDir(SOUTH) //face up  //This is an example of a new feature based on the context of the location of the victim.
 			*/									//It means that upgrading while someone is lying on the ground would cause you to go into pin mode.
 		state = GRAB_AGGRESSIVE
+
+		V.CharSheet.adjustDEX(attAdv)
+		attAdv *= 2 // 1
+		V.CharSheet.adjustDEX(-attAdv)
+
 		icon_state = "grabbed1"
 		hud.icon_state = "reinforce1"
 		add_attack_logs(assailant, affecting, "Aggressively grabbed", ATKLOG_ALL)
@@ -342,7 +380,11 @@
 			affecting.LAssailant = assailant
 		hud.icon_state = "kill"
 		hud.name = "kill"
-		affecting.Stun(3 SECONDS) // Ensures the grab is able to be secured
+
+		V.CharSheet.adjustDEX(attAdv)
+		attAdv *= 2 // 2
+		V.CharSheet.adjustDEX(-attAdv)
+
 	else if(state < GRAB_UPGRADING)
 		assailant.visible_message("<span class='danger'>[assailant] starts to tighten [assailant.p_their()] grip on [affecting]'s neck!</span>")
 		hud.icon_state = "kill1"
@@ -350,6 +392,10 @@
 		state = GRAB_KILL
 		assailant.visible_message("<span class='danger'>[assailant] has tightened [assailant.p_their()] grip on [affecting]'s neck!</span>")
 		add_attack_logs(assailant, affecting, "Strangled")
+
+		V.CharSheet.adjustDEX(attAdv)
+		attAdv *= 2 // 4
+		V.CharSheet.adjustDEX(-attAdv)
 
 		assailant.next_move = world.time + 10
 		if(!affecting.get_organ_slot("breathing_tube"))

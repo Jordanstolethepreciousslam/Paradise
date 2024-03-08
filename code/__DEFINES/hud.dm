@@ -27,6 +27,7 @@
 #define DIAG_AIRLOCK_HUD 	"22" // Airlock shock overlay
 #define GLAND_HUD 			"23"//Gland indicators for abductors
 #define JANI_HUD			"24" // Sign overlay over cleanable decals
+#define TAC_HUD				"25"
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
@@ -42,6 +43,7 @@
 #define DATA_HUD_DIAGNOSTIC_ADVANCED	6
 #define DATA_HUD_HYDROPONIC			7
 #define DATA_HUD_JANITOR			8
+#define DATA_HUD_TAC                22
 //antag HUD defines
 #define ANTAG_HUD_CULT		9
 #define ANTAG_HUD_REV		10
@@ -56,6 +58,7 @@
 #define DATA_HUD_ABDUCTOR	19
 #define ANTAG_HUD_EVENTMISC 20
 #define ANTAG_HUD_BLOB 21
+
 
 // Notification action types
 #define NOTIFY_JUMP "jump"

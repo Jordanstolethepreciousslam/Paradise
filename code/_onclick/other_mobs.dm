@@ -54,6 +54,8 @@
 
 	if(isturf(A) && get_dist(src, A) <= 1)
 		Move_Pulled(A)
+	if(a_intent != INTENT_HELP)
+		abstractProj(A)
 
 /*
 	Animals & All Unspecified

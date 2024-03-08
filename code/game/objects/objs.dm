@@ -315,4 +315,4 @@
 	if(issilicon(C))
 		C.Weaken(3 SECONDS)
 	else
-		C.KnockDown(3 SECONDS)
+		C.Slowed(2 SECONDS)

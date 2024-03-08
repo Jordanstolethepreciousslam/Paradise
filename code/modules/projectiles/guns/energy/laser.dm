@@ -180,7 +180,7 @@
 	icon_state = "sniperlaser"
 	range = 255
 	damage = 10
-	speed = 0.75
+	speed = 0.25
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
 	forced_accuracy = TRUE
 	var/can_knockdown = TRUE
@@ -198,7 +198,7 @@
 
 /obj/item/projectile/beam/laser/sniper/pierce
 	forcedodge = 1 // Can pierce one non wall thing.
-	speed = 0.5
+	speed = 0.25
 	/// Have we hit an r_wall? If we have, don't pierce it again so we don't become too effective on reinforced locations (AI sat)
 	var/hit_a_r_wall = FALSE
 
